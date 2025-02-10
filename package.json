@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "load-testing6",
+  "version": "1.0.0",
+  "description": "A load testing tool k6",
+  "type": "module",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "biome lint . && biome format .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format --write .",
+    "maintenance": "rm -rf ./node_modules && npm cache clean --force",
+    "docs:gen": "npx jsdoc2md ./scenarios/**/*.js > docs/scenarios.md",
+    "doc:serve": "npx --yes docsify-cli serve docs --port 7667",
+    "docs": "npm run docs:gen && npm run doc:serve",
+    "deps:update": "npx taze",
+    "deps:unused": "npx knip"
+  },
+  "author": "Stephen Deletang <stephen-shopopop@shopopop.com>",
+  "keywords": [
+    "k6"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephen-shopopop/load-testing"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/k6": "^0.54.2",
+    "docsify-cli": "^4.4.4",
+    "jsdoc-to-markdown": "^9.1.1"
+  },
+  "engines": {
+    "node": "^22"
+  }
+}

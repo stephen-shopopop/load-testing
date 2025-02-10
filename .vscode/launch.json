@@ -1,0 +1,60 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      /**
+        * Start k6 with simple scenario
+        */
+      "name": "Launch k6",
+      "request": "launch",
+      "type": "pwa-node",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "k6",
+      "runtimeArgs": [
+        "run"
+      ],
+      "outputCapture": "std"
+    },
+    {
+      /** 
+        * Start k6 with webserver local
+        */
+      "name": "Launch k6 with web server",
+      "request": "launch",
+      "type": "pwa-node",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "k6",
+      "runtimeArgs": [
+        "run"
+      ],
+      "outputCapture": "std",
+      "env": {
+        "K6_WEB_DASHBOARD": "true"
+      }
+    },
+    {
+      /** 
+        * Start k6 with realtime to prometheus
+        *
+        * ref: https://grafana.com/docs/k6/latest/results-output/real-time/prometheus-remote-write/ 
+        * Dashbaord: https://grafana.com/grafana/dashboards/19665-k6-prometheus/ 
+        */
+      "name": "Launch k6 realtime with prometheus",
+      "request": "launch",
+      "type": "pwa-node",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "k6",
+      "runtimeArgs": [
+        "run", "-o", "experimental-prometheus-rw"
+      ],
+      "outputCapture": "std",
+      "env": {
+        "K6_PROMETHEUS_RW_SERVER_URL": "http://localhost:9090/api/v1/write",
+        "K6_PROMETHEUS_RW_TREND_AS_NATIVE_HISTOGRAM": "false"
+      }
+    },
+  ]
+}

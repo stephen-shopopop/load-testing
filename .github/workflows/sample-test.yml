@@ -1,0 +1,20 @@
+# https://grafana.com/blog/2024/07/15/performance-testing-with-grafana-k6-and-github-actions/
+name: Sample run smoke-test
+run-name: K6 run sample smoke-test by @${{ github.actor }}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+      - name: Run local k6 test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: ./samples/smoke-test.js
