@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@types/k6": "^0.54.2",
+    "@types/k6": "^0.57.1",
     "docsify-cli": "^4.4.4",
     "jsdoc-to-markdown": "^9.1.1"
   },
