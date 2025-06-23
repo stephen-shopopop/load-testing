@@ -28,7 +28,7 @@
     "url": "https://github.com/stephen-shopopop/load-testing"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.4",
     "@types/k6": "^0.57.1",
     "docsify-cli": "^4.4.4",
     "jsdoc-to-markdown": "^9.1.1"
