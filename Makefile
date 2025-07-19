@@ -25,7 +25,6 @@ endif
 	@echo "🆗 The necessary dependencies are already installed!"
 
 .PHONY: install
-install/deps: requirements ## Install the project dependencies
+install/k6: requirements ## Install k6 with homebrew
 	@echo "🍿 Installing dependencies for mac with homebrew (https://brew.sh)... "
 	@brew install k6
-	@curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
