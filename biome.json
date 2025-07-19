@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -7,16 +7,20 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [".vscode/*", "docker", "commitlint.config.ts", "package.json"]
+    "includes": [
+      "**",
+      "!**/.vscode/**/*",
+      "!**/docker",
+      "!**/commitlint.config.ts",
+      "!**/package.json"
+    ]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "lineWidth": 100
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {

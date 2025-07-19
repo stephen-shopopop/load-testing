@@ -1,0 +1,41 @@
+min_version = "2025.7.7"
+
+[env]
+NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
+
+# Use the project name derived from the current directory
+PROJECT_NAME = "{{ config_root | basename }}"
+
+[hooks]
+enter = 'mise i -q'
+postinstall = 'npx simple-git-hooks'
+
+[settings]
+# This must be enabled to make the hooks work
+experimental = true
+
+[tools] # Use "mise i" to install & use "mise use" to add tools
+actionlint = "latest"
+k6 = "latest"
+node = "24.4.0"
+
+"npm:@antfu/ni" = "latest"
+
+[tasks.install]
+description = 'Install the project dependencies'
+alias = 'i'
+run = 'npm install'
+
+[tasks.check]
+description = "Linter for GithubAction files"
+run = 'actionlint && npm run check'
+
+[tasks.maintenance]
+description = 'Maintenance project'
+run = 'npm run maintenance && mise uninstall --all'
+
+[tasks.info]
+description = "Print project information"
+run = '''
+echo "Project: $PROJECT_NAME"
+'''

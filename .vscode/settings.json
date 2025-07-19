@@ -1,33 +1,78 @@
 {
-	"files.eol": "\n",
-	"files.insertFinalNewline": true,
-	"[javascript][typescript]": {
-		"editor.formatOnSave": true,
-		"editor.formatOnPaste": false, // work around https://github.com/simonhaenisch/prettier-plugin-organize-imports/issues/53
-		"editor.insertSpaces": true,
-		"editor.tabSize": 2,
-		"editor.detectIndentation": false,
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"[json][[jsonc][yaml][typespec][markdown][css]": {
-		"editor.formatOnSave": true,
-		"editor.formatOnPaste": true,
-		"editor.insertSpaces": true,
-		"editor.tabSize": 2,
-		"editor.detectIndentation": false,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"prettier.enable": false,
-	"editor.codeActionsOnSave": {
-		"source.organizeImports.biome": "explicit",
-		"quickfix.biome": "explicit"
-	},
-	"errorLens.gutterIconsEnabled": true,
-	"errorLens.gutterIconSet": "borderless",
-	"errorLens.followCursor": "activeLine",
-	"editor.acceptSuggestionOnEnter": "on",
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"[json]": {
-		"editor.defaultFormatter": "vscode.json-language-features"
-	}
+  "window.zoomLevel": -1,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "git.ignoreRebaseWarning": true,
+  "git.replaceTagsWhenPull": true,
+  "makefile.configureOnOpen": true,
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "quickfix.biome": "explicit"
+  },
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.gutterIconSet": "borderless",
+  "errorLens.followCursor": "activeLine",
+  // -- Editeur
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  // -- Sidebar
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  // -- Code
+  "editor.occurrencesHighlight": "multiFile",
+  "editor.renderWhitespace": "trailing",
+  // Theming
+  "editor.fontFamily": "Jetbrains Mono, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.4,
+  // Ergonomie
+  "editor.wordWrap": "on",
+  "editor.suggest.insertMode": "replace",
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.formatOnPaste": false,
+  "editor.linkedEditing": true,
+  "explorer.autoReveal": false,
+  "explorer.confirmDragAndDrop": false,
+  // Languages
+  "[javascript][typescript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false, // work around https://github.com/simonhaenisch/prettier-plugin-organize-imports/issues/53
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true
+  },
+  "cSpell.words": [
+    "tagname"
+  ],
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "/Users/stephen-shopopop/.local/share/mise/shims/node"
+  },
 }

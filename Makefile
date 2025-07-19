@@ -29,19 +29,3 @@ install/deps: requirements ## Install the project dependencies
 	@echo "🍿 Installing dependencies for mac with homebrew (https://brew.sh)... "
 	@brew install k6
 	@curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-
-.PHONY: check
-check: ## Check the project
-	@echo "🧩 Check project ..."
-	@npm run check
-
-.PHONY: install/globals
-install/globals: requirements ## Install global dependencies (ex: yarn)
-	@echo "📦 Installing globals dependencies..."
-	@make run CMD="npm i @antfu/ni -g"
-
-.PHONY: install
-install: requirements ## Install the project
-	@echo "🍿 Installing dependencies..."
-	@npx simple-git-hooks
-	@npm install

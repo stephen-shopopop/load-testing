@@ -8,9 +8,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "biome lint .",
+    "format": "biome lint --write . && biome format --write .",
     "check": "biome lint . && biome format .",
-    "lint:fix": "biome lint --write .",
-    "format": "biome format --write .",
     "maintenance": "rm -rf ./node_modules && npm cache clean --force",
     "docs:gen": "npx jsdoc2md ./scenarios/**/*.js > docs/scenarios.md",
     "doc:serve": "npx --yes docsify-cli serve docs --port 7667",
@@ -27,13 +27,20 @@
     "type": "git",
     "url": "https://github.com/stephen-shopopop/load-testing"
   },
+  "bugs": {
+    "url": "https://github.com/stephen-shopopop/load-testing/issues"
+  },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@types/k6": "^0.57.1",
+    "@biomejs/biome": "^2.1.2",
+    "@types/k6": "^1.1.1",
     "docsify-cli": "^4.4.4",
-    "jsdoc-to-markdown": "^9.1.1"
+    "jsdoc-to-markdown": "^9.1.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run check",
+    "commit-msg": "npx commitlint --edit $1"
   },
   "engines": {
-    "node": "^22"
+    "node": ">=22"
   }
 }
