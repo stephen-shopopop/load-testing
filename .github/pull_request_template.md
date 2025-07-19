@@ -18,4 +18,4 @@ Test QA || Other test
 
 - [ ] Deployment conditions
 
-### Description of Pull Request/Additional information:
+### Description of Pull Request/Additional information
