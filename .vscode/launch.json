@@ -17,7 +17,7 @@
       "outputCapture": "std"
     },
     {
-      /** 
+      /**
         * Start k6 with webserver local
         */
       "name": "Launch k6 with web server",
@@ -35,11 +35,14 @@
       }
     },
     {
-      /** 
+      /**
         * Start k6 with realtime to prometheus
         *
-        * ref: https://grafana.com/docs/k6/latest/results-output/real-time/prometheus-remote-write/ 
-        * Dashbaord: https://grafana.com/grafana/dashboards/19665-k6-prometheus/ 
+        * ref: https://grafana.com/docs/k6/latest/results-output/real-time/prometheus-remote-write/
+        *
+        * Grafana dashboard:
+        * - https://grafana.com/grafana/dashboards/19665-k6-prometheus/
+        * - https: //grafana.com/grafana/dashboards/18030-k6-prometheus-native-histograms/
         */
       "name": "Launch k6 realtime with prometheus",
       "request": "launch",
@@ -48,12 +51,17 @@
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "k6",
       "runtimeArgs": [
-        "run", "-o", "experimental-prometheus-rw"
+        "run",
+        "-o",
+        "experimental-prometheus-rw"
       ],
       "outputCapture": "std",
       "env": {
         "K6_PROMETHEUS_RW_SERVER_URL": "http://localhost:9090/api/v1/write",
-        "K6_PROMETHEUS_RW_TREND_AS_NATIVE_HISTOGRAM": "false"
+        "K6_PROMETHEUS_RW_TREND_AS_NATIVE_HISTOGRAM": "true",
+        "K6_PROMETHEUS_RW_TREND_STATS": "p(95),p(99),min,max",
+        "K6_PROMETHEUS_RW_USERNAME": "USERNAME",
+        "K6_PROMETHEUS_RW_PASSWORD": "PASSWORD"
       }
     },
   ]

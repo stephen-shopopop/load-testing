@@ -10,9 +10,10 @@ backend = "aqua:grafana/k6"
 version = "24.4.0"
 backend = "core:node"
 
-[tools.node.checksums]
-"node-v24.4.0-darwin-arm64.tar.gz" = "sha256:d7db0e5017d68f4e34405f5c99ad3895481793cc6420550e582b7eedf911780f"
-
 [tools."npm:@antfu/ni"]
 version = "25.0.0"
 backend = "npm:@antfu/ni"
+
+[tools."npm:dclint"]
+version = "3.0.0"
+backend = "npm:dclint"

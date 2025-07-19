@@ -20,15 +20,33 @@ k6 = "latest"
 node = "24.4.0"
 
 "npm:@antfu/ni" = "latest"
+"npm:dclint" = "latest"
 
 [tasks.install]
 description = 'Install the project dependencies'
 alias = 'i'
 run = 'npm install'
 
+[tasks.fmt]
+description = "Format all file"
+run = 'mise fmt && dclint . --fix && npm run format'
+
 [tasks.check]
 description = "Linter for GithubAction files"
-run = 'actionlint && npm run check'
+run = 'actionlint && dclint . && npm run check'
+
+[tasks.docker-compose-up]
+description = 'Docker compose UP'
+run = 'docker compose -f compose.yml up -d'
+
+[tasks.docker-compose-down]
+description = 'Docker compose DOWN & Clean'
+run = 'docker compose -f compose.yml down --rmi local --volumes --remove-orphans'
+
+[tasks.docker-builder-prune]
+description = 'Docker prune'
+run = 'docker builder prune -a && docker image prune && docker network prune'
+
 
 [tasks.maintenance]
 description = 'Maintenance project'
